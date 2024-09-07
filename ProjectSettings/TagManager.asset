@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - ItemRocket
   - PrefabMark
+  - Bullet
   layers:
   - Default
   - TransparentFX

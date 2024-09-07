@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeLifeDestroy : MonoBehaviour
+public class BulletLifeDestroy : MonoBehaviour
 {
     public float timeLife = 2f;
     float _timelife = 0f;
@@ -23,7 +23,7 @@ public class TimeLifeDestroy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            damage = Random.Range(7,13);
+            damage = Random.Range(7, 13);
             EnemyBehave rb = collision.gameObject.GetComponent<EnemyBehave>();
             rb.TakeDamage(damage);
             // Destroy(obj);

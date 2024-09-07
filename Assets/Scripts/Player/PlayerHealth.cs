@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth;
+    public int maxHealth;
     public static PlayerHealth instance;
     public GameObject dieEffect, dieEffectPosition;
     int currentHealth, numCLone = 3;
@@ -29,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         {
             if (currentHealth > 0)
             {
+                
                 currentHealth -= damage;
                 healthBar.UpdateBar(currentHealth, maxHealth);
             }

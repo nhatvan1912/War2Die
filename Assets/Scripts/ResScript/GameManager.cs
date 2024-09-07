@@ -7,14 +7,18 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Animator animator;
     public GameObject instruction;
+    public Texture2D newCursorTexture;
+
     void Start()
     {
         if (instance == null)
             instance = this;
+        // Cursor.SetCursor(newCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
     public void PlayGame()
     {
         SceneManager.LoadScene("Scenes/SampleScene");
+        Cursor.SetCursor(newCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
     public void TurnOnInstruction()
     {

@@ -11,10 +11,10 @@ public class TakeGun : MonoBehaviour
     {
         if (collider.CompareTag("Gun"))
         {
-            for(int j = 0; j < addGunPos.Length; j++)
-                if (addGunPos[j].transform.childCount == 0)  
+            for (int j = 0; j < addGunPos.Length; j++)
+                if (addGunPos[j].transform.childCount == 0)
                 {
-                    Instantiate(GunClone,addGunPos[j].transform.position,Quaternion.identity,addGunPos[j].transform);
+                    Instantiate(GunClone, addGunPos[j].transform.position, Quaternion.identity, addGunPos[j].transform);
                     break;
                 }
         }

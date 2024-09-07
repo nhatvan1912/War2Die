@@ -10,15 +10,15 @@ public class StaminaBar : MonoBehaviour
     public static StaminaBar instance;
     void Start()
     {
-        if(instance == null)
+        if (instance == null)
             instance = this;
     }
     void Update()
     {
-        if(timeCount <= 0f)
+        if (timeCount <= 0f)
         {
             timeCount = timeStaminaRestore;
-            if(Player.instance.currSta + 2 <= Player.instance.maxSta)
+            if (Player.instance.currSta + 2 <= Player.instance.maxSta)
                 Player.instance.currSta += 2;
             UpdateBar(Player.instance.currSta, Player.instance.maxSta);
         }

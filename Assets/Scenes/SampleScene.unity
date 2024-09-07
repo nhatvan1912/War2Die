@@ -158,9 +158,9 @@ MonoBehaviour:
   maxX: 32
   minY: -24
   maxY: 26
-  startTimeBtwSpawn: 10
-  decreaseTime: 0
-  minTime: 0.5
+  startTimeBtwSpawn: 20
+  decreaseTime: 0.5
+  minTime: 10
   isInf: 1
   numberRepawn: 3
 --- !u!4 &15619670
@@ -3373,7 +3373,7 @@ GameObject:
   - component: {fileID: 554417939}
   - component: {fileID: 554417938}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SuccideButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4596,12 +4596,14 @@ MonoBehaviour:
   - {fileID: 7382627388257037761, guid: b9b7ec60cc3a23c479fe1eb26a0ae6a0, type: 3}
   - {fileID: 7382627388257037761, guid: b9b7ec60cc3a23c479fe1eb26a0ae6a0, type: 3}
   - {fileID: 4921787725761088953, guid: 0054567ca0b4f8e41b45fd452cefd91a, type: 3}
+  - {fileID: 7382627388257037761, guid: b9b7ec60cc3a23c479fe1eb26a0ae6a0, type: 3}
+  - {fileID: 7382627388257037761, guid: b9b7ec60cc3a23c479fe1eb26a0ae6a0, type: 3}
   minX: -44
   maxX: 32
   minY: -24
   maxY: 26
   startTimeBtwSpawn: 3
-  decreaseTime: 0.2
+  decreaseTime: 0.05
   minTime: 0.5
   isInf: 1
   numberRepawn: 3

@@ -32,7 +32,7 @@ public class GameTotal : MonoBehaviour
     IEnumerator OnGameOver()
     {
         yield return new WaitForSeconds(3f);
-
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
         int minutes = Mathf.FloorToInt(playTime / 60);
         int seconds = Mathf.FloorToInt(playTime % 60);
         timerText.text = "Time play: " + string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -64,6 +64,7 @@ public class GameTotal : MonoBehaviour
     }
     public void OnPLayAgain()
     {
+        Cursor.SetCursor(GameManager.instance.newCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
         SceneManager.LoadScene("Scenes/SampleScene");
         Time.timeScale = 1f;
     }

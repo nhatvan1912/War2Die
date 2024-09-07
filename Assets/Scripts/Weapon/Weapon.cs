@@ -30,7 +30,7 @@ public class Weapon : MonoBehaviour
         {
             // GameObject bulletClone = Instantiate(bullet, firePos.position, Quaternion.identity);
             GameObject muzzleClone = Instantiate(muzzle, firePos.position, transform.rotation, transform);
-            Destroy(muzzleClone, 0.1f);
+            // Destroy(muzzleClone, 0.1f);
             GameObject bulletClone = ObjectPooling.instance.GetPoolObject();
             if (bulletClone != null)
             {

@@ -6,7 +6,7 @@ public class EnemyBehave : MonoBehaviour
 {
     [SerializeField] private int hp = 5;
     public GameObject enemy, deadEffect, floatText;
-    public int damage = 5;
+    public int damageEnemy = 5;
     public static EnemyBehave instance;
     public int value = 0;
     void Start()
@@ -42,7 +42,7 @@ public class EnemyBehave : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            PlayerHealth.instance.TakeDamage(damage);
+            PlayerHealth.instance.TakeDamage(damageEnemy);
         }
     }
 }

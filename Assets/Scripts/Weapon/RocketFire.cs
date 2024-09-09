@@ -7,8 +7,11 @@ public class RocketFire : MonoBehaviour
     public GameObject rocket, rocketPos;
     float reloading;
     public float reloadSpeed = 2f, rocketForce = 20f;
-    public static int remain = 2;
-
+    public static int remain;
+    void Start()
+    {
+        remain = 2;
+    }
     void Update()
     {
         GunFire();

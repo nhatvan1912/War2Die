@@ -13,16 +13,22 @@ public class GameTotal : MonoBehaviour
     public Animator animator;
     public static GameTotal instance;
     public GameObject[] marks;
+    public Texture2D newCursorTexture;
+    public bool highPressure;
     void Start()
     {
         // marks = GameObject.FindGameObjectsWithTag("PrefabMark");
         playTime = 0;
+        highPressure = false;
         if (instance == null)
             instance = this;
+        Cursor.SetCursor(newCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
     void Update()
     {
         playTime += Time.deltaTime;
+        if (playTime > 120)
+            highPressure = true;
         if (PlayerHealth.instance.dead == true && check == 0)
         {
             StartCoroutine(OnGameOver());
@@ -64,7 +70,6 @@ public class GameTotal : MonoBehaviour
     }
     public void OnPLayAgain()
     {
-        Cursor.SetCursor(GameManager.instance.newCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
         SceneManager.LoadScene("Scenes/SampleScene");
         Time.timeScale = 1f;
     }

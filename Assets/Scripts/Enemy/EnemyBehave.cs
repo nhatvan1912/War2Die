@@ -9,6 +9,7 @@ public class EnemyBehave : MonoBehaviour
     public int damageEnemy = 5;
     public static EnemyBehave instance;
     public int value = 0;
+    public Texture2D newCursorTexture;
     void Start()
     {
         enemy = this.gameObject;
@@ -17,7 +18,13 @@ public class EnemyBehave : MonoBehaviour
     }
     void Update()
     {
-
+        if (hp <= 0)
+        {
+            Destroy(enemy);
+            Instantiate(deadEffect, transform.position, Quaternion.identity);
+            Score.instance.UpdateScore(value);
+            GameTotal.instance.enemyDeath += 1;
+        }
     }
     public void TakeDamage(int damage)
     {
@@ -26,23 +33,15 @@ public class EnemyBehave : MonoBehaviour
         floatClone.GetComponent<TextMeshPro>().text = damage.ToString();
         if(damage > 10)
             floatClone.GetComponent<TextMeshPro>().color = new Color(0.9137255f, 0.1051038f, 0.0235294f, 1f);
-        // RectTransform rectTransform = floatClone.GetComponent<RectTransform>();
-        // TextMeshProUGUI float_text = 
-        // float_text.text = damage.ToString();
         Destroy(floatClone, 1f);
-        if (hp < 0)
-        {
-            Destroy(enemy);
-            Instantiate(deadEffect, transform.position, Quaternion.identity);
-            Score.instance.UpdateScore(value);
-            GameTotal.instance.enemyDeath += 1;
-        }
     }
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
             PlayerHealth.instance.TakeDamage(damageEnemy);
+            if(!Player.instance.rollOnce)
+                AudioManager.instance.OnEnemyBite();
         }
     }
 }

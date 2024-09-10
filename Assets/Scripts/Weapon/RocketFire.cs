@@ -7,9 +7,15 @@ public class RocketFire : MonoBehaviour
     public GameObject rocket, rocketPos;
     float reloading;
     public float reloadSpeed = 2f, rocketForce = 20f;
-    public static int remain;
+    
+    public bool isFire = false;
+    public int remain;
+    public static RocketFire instance;
+    
     void Start()
     {
+        if(instance == null)
+            instance = this;
         remain = 2;
     }
     void Update()
@@ -21,6 +27,7 @@ public class RocketFire : MonoBehaviour
         if (Input.GetMouseButton(1) && reloading <= 0 && remain > 0)
         {
             reloading = reloadSpeed;
+            isFire = true;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 lookDir = mousePos - rocketPos.transform.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
@@ -32,6 +39,7 @@ public class RocketFire : MonoBehaviour
         }
         else
         {
+            isFire = false;
             reloading -= Time.deltaTime;
         }
     }

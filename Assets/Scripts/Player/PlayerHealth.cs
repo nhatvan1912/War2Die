@@ -47,15 +47,7 @@ public class PlayerHealth : MonoBehaviour
         Destroy(gameObject, 0.8f);
         Invoke("creatDieEffect", 0.7f);
         dead = true;
-
-        // StartCoroutine(TotalEverything());
     }
-    // IEnumerator TotalEverything()
-    // {
-    //     yield return new WaitForSeconds(1.5f);
-    //     Debug.Log("OnGameOVer called in PLayerHealth");
-    //     GameTotal.instance.OnGameOver();
-    // }
     void creatDieEffect()
     {
         if (numCLone > 0)

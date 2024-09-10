@@ -9,6 +9,6 @@ public class RocketIven : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        remainRocket.text = RocketFire.remain.ToString();
+        remainRocket.text = RocketFire.instance.remain.ToString();
     }
 }

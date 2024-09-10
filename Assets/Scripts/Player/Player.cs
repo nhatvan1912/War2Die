@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public SpriteRenderer characterSR;
     public float Rolltime = 0.25f, rollbust = 2f;
-    private float roll = 0f, ghostTimeDelay = 0.04f;
+    private float roll = 0f, ghostTimeDelay = 0.03f;
     public bool rollOnce = false;
     public GameObject ghostCharPrefab;
     private IEnumerator dashEffectCoroutine;
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         transform.position += moveInput * moveSpeed * Time.deltaTime;
         if (moveInput.x > 0) characterSR.transform.localScale = new Vector3(1, 1, 0);
         if (moveInput.x < 0) characterSR.transform.localScale = new Vector3(-1, 1, 0);
-        if (Input.GetKeyDown(KeyCode.Space) && roll <= 0 && rollOnce == false && currSta > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && roll <= 0 && rollOnce == false && currSta > 20)
         {
             moveSpeed += rollbust;
             roll = Rolltime;
@@ -57,19 +57,6 @@ public class Player : MonoBehaviour
             roll -= Time.deltaTime;
         }
     }
-    // void StopDashEffect()
-    // {
-    //     if(dashEffectCoroutine != null)
-    //         StopCoroutine(DashEffectCoroutine());
-    //         dashEffectCoroutine = null;
-    // }
-    // void StartDashEffect()
-    // {
-    //     if(dashEffectCoroutine != null)
-    //         StopCoroutine(DashEffectCoroutine());
-    //     dashEffectCoroutine = StartCoroutine(DashEffectCoroutine());
-    //     dashEffectCoroutine = StopCoroutine(DashEffectCoroutine());
-    // }
     public IEnumerator DashEffectCoroutine()
     {
         while (true)

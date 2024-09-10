@@ -161,5 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b2bb845441d5a40a295e848f01ea5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLife: 3
+  timeLife: 1.5
   damage: 10

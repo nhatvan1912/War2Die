@@ -8,6 +8,14 @@ public class Weapon : MonoBehaviour
     public float reloadSpeed = 0.5f, bulletForce = 10f;
     public Transform firePos;
     private float reloading = 0f;
+    
+    public bool isFire = false;
+    public static Weapon instance;
+    void Start()
+    {
+        if (instance == null)
+            instance = this;
+    }
     void Update()
     {
         RotateGun();
@@ -32,6 +40,7 @@ public class Weapon : MonoBehaviour
             GameObject muzzleClone = Instantiate(muzzle, firePos.position, transform.rotation, transform);
             // Destroy(muzzleClone, 0.1f);
             GameObject bulletClone = ObjectPooling.instance.GetPoolObject();
+            isFire = true;
             if (bulletClone != null)
             {
                 bulletClone.transform.position = firePos.position;
@@ -47,6 +56,7 @@ public class Weapon : MonoBehaviour
         else
         {
             reloading -= Time.deltaTime;
+            isFire = false;
         }
     }
     // IEnumerator SetFalse(GameObject bulletClone)

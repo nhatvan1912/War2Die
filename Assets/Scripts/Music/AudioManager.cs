@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource music, boomSource, shootSource, dashSource;
-    public AudioClip startWarMusic, highPressureClip, boomClip, shootClip, dashClip, reviveClip;
+    public AudioSource music, boomSource, shootSource, dashSource, collisionSource;
+    public AudioClip startWarMusic, highPressureClip, boomClip, shootClip, dashClip, reviveClip, buttonClip, bulletImpactClip;
     public AudioClip[] enemyClip;
     public static AudioManager instance;
     int onchange = 0;
@@ -52,20 +52,20 @@ public class AudioManager : MonoBehaviour
     void OnShootClip()
     {
         shootSource.clip = shootClip;
-        shootSource.volume = 0.4f;
+        shootSource.volume = 0.6f;
         shootSource.Play();
     }
     void OnDashClip()
     {
         dashSource.clip = dashClip;
-        // dashSource.time = 0.25f;
+        dashSource.time = 0.1f;
         dashSource.volume = 1f;
         dashSource.Play();
     }
     void OnBoomClip()
     {
         boomSource.clip = boomClip;
-        boomSource.volume = 0.5f;
+        boomSource.volume = 0.7f;
         boomSource.Play();
         StartCoroutine(StopBoomClip());
     }
@@ -74,12 +74,23 @@ public class AudioManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         boomSource.Stop();
     }
+    public void OnClickButton()
+    {
+        boomSource.clip = buttonClip;
+        boomSource.Play();
+    }
     public void OnEnemyBite()
     {
         int i = Random.Range(0, enemyClip.Length);
         dashSource.clip = enemyClip[i];
         dashSource.volume = 0.5f;
         dashSource.Play();
+    }
+    public void OnCollisionEnemy()
+    {
+        collisionSource.clip = bulletImpactClip;
+        collisionSource.volume = 0.4f;
+        collisionSource.Play();
     }
     // void OnDeathClip()
     // {

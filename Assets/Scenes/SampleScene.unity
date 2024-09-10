@@ -3712,6 +3712,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1658005354}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &554417939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9370,12 +9382,15 @@ MonoBehaviour:
   boomSource: {fileID: 1059908109}
   shootSource: {fileID: 348110317}
   dashSource: {fileID: 2067402435}
+  collisionSource: {fileID: 0}
   startWarMusic: {fileID: 8300000, guid: 56159f194050872449e17f7535a4a1b6, type: 3}
   highPressureClip: {fileID: 8300000, guid: 983475f9492b6354495c45f9e58d9788, type: 3}
   boomClip: {fileID: 8300000, guid: d47e6ed162da1f740ad807d00f4679f3, type: 3}
   shootClip: {fileID: 8300000, guid: 34b439bf70b80a6409eadecc6be92d68, type: 3}
   dashClip: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
   reviveClip: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
+  buttonClip: {fileID: 0}
+  bulletImpactClip: {fileID: 8300000, guid: 75adfe9a619833445a701305b983e548, type: 3}
   enemyClip:
   - {fileID: 8300000, guid: ac6034ade498bb94b87620cdf6eac48b, type: 3}
   - {fileID: 8300000, guid: 8ebcb6234d419344daa712ba65bb3798, type: 3}

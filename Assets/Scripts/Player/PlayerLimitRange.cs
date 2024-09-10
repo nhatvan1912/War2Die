@@ -11,7 +11,7 @@ public class PlayerLimitRange : MonoBehaviour
     {
         GameObject circle = Instantiate(circleRevive, particlePosition.transform.position, Quaternion.Euler(-90, 0, 0), transform);
         Destroy(circle, 2f);
-        Invoke("Display", 2f);
+        Invoke("Display", 1f);
     }
     void Display()
     {

@@ -70,11 +70,13 @@ public class GameTotal : MonoBehaviour
     }
     public void OnPLayAgain()
     {
+        AudioManager.instance.OnClickButton();
         SceneManager.LoadScene("Scenes/SampleScene");
         Time.timeScale = 1f;
     }
     public void OnExitToScreen()
     {
+        AudioManager.instance.OnClickButton();
         SceneManager.LoadScene("Scenes/StartScene");
         Time.timeScale = 1f;
     }

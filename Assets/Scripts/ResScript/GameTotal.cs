@@ -27,7 +27,7 @@ public class GameTotal : MonoBehaviour
     void Update()
     {
         playTime += Time.deltaTime;
-        if (playTime > 120)
+        if (playTime > 100)
             highPressure = true;
         if (PlayerHealth.instance.dead == true && check == 0)
         {
@@ -70,13 +70,11 @@ public class GameTotal : MonoBehaviour
     }
     public void OnPLayAgain()
     {
-        AudioManager.instance.OnClickButton();
         SceneManager.LoadScene("Scenes/SampleScene");
         Time.timeScale = 1f;
     }
     public void OnExitToScreen()
     {
-        AudioManager.instance.OnClickButton();
         SceneManager.LoadScene("Scenes/StartScene");
         Time.timeScale = 1f;
     }

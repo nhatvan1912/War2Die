@@ -24,7 +24,7 @@ public class BulletLifeDestroy : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             AudioManager.instance.OnCollisionEnemy();
-            damage = Random.Range(7, 13);
+            damage = Random.Range(7, 14);
             EnemyBehave rb = collision.gameObject.GetComponent<EnemyBehave>();
             rb.TakeDamage(damage);
             // Destroy(obj);

@@ -5,10 +5,10 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource music, boomSource, shootSource, dashSource, collisionSource;
-    public AudioClip startWarMusic, highPressureClip, boomClip, shootClip, dashClip, reviveClip, buttonClip, bulletImpactClip;
+    public AudioClip startWarMusic, highPressureClip, boomClip, shootClip, dashClip, reviveClip, playerDeathClip, buttonClip, bulletImpactClip;
     public AudioClip[] enemyClip;
     public static AudioManager instance;
-    int onchange = 0;
+    int onchange = 0, ondeath = 0;
     void Start()
     {
         if (instance == null)
@@ -38,10 +38,11 @@ public class AudioManager : MonoBehaviour
             OnChangeMusicBgr();
             onchange = 1;
         }
-        // if(PlayerHealth.instance.dead == true)
-        // {
-        //     Invoke("OnDeathClip", 0.5f);
-        // }
+        if(PlayerHealth.instance.dead == true && ondeath == 0)
+        {
+            Invoke("OnPlayerDeathClip", 0.5f);
+            ondeath = 1;
+        }
     }
     void OnChangeMusicBgr()
     {
@@ -52,17 +53,17 @@ public class AudioManager : MonoBehaviour
     void OnShootClip()
     {
         shootSource.clip = shootClip;
-        shootSource.volume = 0.6f;
+        shootSource.volume = 0.7f;
         shootSource.Play();
     }
     void OnDashClip()
     {
         dashSource.clip = dashClip;
         dashSource.time = 0.1f;
-        dashSource.volume = 1f;
+        dashSource.volume = 0.15f;
         dashSource.Play();
     }
-    void OnBoomClip()
+    void OnBoomClip()   
     {
         boomSource.clip = boomClip;
         boomSource.volume = 0.7f;
@@ -89,12 +90,12 @@ public class AudioManager : MonoBehaviour
     public void OnCollisionEnemy()
     {
         collisionSource.clip = bulletImpactClip;
-        collisionSource.volume = 0.4f;
         collisionSource.Play();
     }
-    // void OnDeathClip()
-    // {
-    //     dashSource.clip = deathClip;
-    //     dashSource.Play();
-    // }
+    void OnPlayerDeathClip()
+    {
+        dashSource.clip = playerDeathClip;
+        dashSource.volume = 1f;
+        dashSource.Play();
+    }
 }

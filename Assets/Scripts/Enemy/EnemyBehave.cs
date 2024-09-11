@@ -9,7 +9,6 @@ public class EnemyBehave : MonoBehaviour
     public int damageEnemy = 5;
     public static EnemyBehave instance;
     public int value = 0;
-    public Texture2D newCursorTexture;
     void Start()
     {
         enemy = this.gameObject;

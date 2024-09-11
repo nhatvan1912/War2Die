@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MuzzleDestroy : MonoBehaviour
+public class ObjectDestroy : MonoBehaviour
 {
+    public float timeLife;
     void Update()
     {
-        Destroy(gameObject, 0.1f);
+        Destroy(gameObject, timeLife);
     }
 }

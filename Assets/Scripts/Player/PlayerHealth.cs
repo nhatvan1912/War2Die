@@ -29,8 +29,9 @@ public class PlayerHealth : MonoBehaviour
         {
             if (currentHealth > 0)
             {
-                
-                currentHealth -= damage;
+                if(currentHealth > damage)
+                    currentHealth -= damage;
+                else currentHealth = 0;
                 healthBar.UpdateBar(currentHealth, maxHealth);
             }
             else

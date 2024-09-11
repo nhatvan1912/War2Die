@@ -2240,7 +2240,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9526,15 +9526,15 @@ MonoBehaviour:
   startWarMusic: {fileID: 8300000, guid: 56159f194050872449e17f7535a4a1b6, type: 3}
   highPressureClip: {fileID: 8300000, guid: 983475f9492b6354495c45f9e58d9788, type: 3}
   boomClip: {fileID: 8300000, guid: d47e6ed162da1f740ad807d00f4679f3, type: 3}
-  shootClip: {fileID: 8300000, guid: 34b439bf70b80a6409eadecc6be92d68, type: 3}
-  dashClip: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
+  shootClip: {fileID: 8300000, guid: 06ada5590eba8d6489b36c6f3c54ff78, type: 3}
+  dashClip: {fileID: 8300000, guid: e88084c6f293c324db2b4dcf575d60dc, type: 3}
   reviveClip: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
+  playerDeathClip: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
   buttonClip: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
-  bulletImpactClip: {fileID: 8300000, guid: 75adfe9a619833445a701305b983e548, type: 3}
+  bulletImpactClip: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
   enemyClip:
   - {fileID: 8300000, guid: ac6034ade498bb94b87620cdf6eac48b, type: 3}
   - {fileID: 8300000, guid: 8ebcb6234d419344daa712ba65bb3798, type: 3}
-  - {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
 --- !u!4 &1658005355
 Transform:
   m_ObjectHideFlags: 0

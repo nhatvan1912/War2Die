@@ -227,7 +227,7 @@ MonoBehaviour:
     type: 3}
   floatText: {fileID: 1782478093921479155, guid: aad68b2ad2183d64daeb0fbaffa98122,
     type: 3}
-  damage: 10
+  damageEnemy: 10
   value: 3
 --- !u!95 &5086889216917862846
 Animator:

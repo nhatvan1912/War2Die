@@ -155,7 +155,7 @@ MonoBehaviour:
   radius: 0.15
   height: 1.43
   canMove: 1
-  maxSpeed: 5
+  maxSpeed: 6
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -248,5 +248,6 @@ MonoBehaviour:
     type: 3}
   floatText: {fileID: 1782478093921479155, guid: aad68b2ad2183d64daeb0fbaffa98122,
     type: 3}
-  damage: 5
+  damageEnemy: 7
   value: 1
+  newCursorTexture: {fileID: 0}

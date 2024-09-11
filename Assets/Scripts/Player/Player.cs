@@ -61,7 +61,8 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(ghostCharPrefab, transform.position, transform.rotation);
+            GameObject ghostClone = Instantiate(ghostCharPrefab, transform.position, transform.rotation);
+            Destroy(ghostClone, 1f);
             yield return new WaitForSeconds(ghostTimeDelay);
         }
 

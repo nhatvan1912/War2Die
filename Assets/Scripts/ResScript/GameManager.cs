@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public Animator animator;
-    public GameObject instruction;
+    public Animator animatorIns, animatorLea;
+    public GameObject instruction, leaderboard;
     public AudioSource music, sfxSource;
     public AudioClip buttonClick;
     public AudioClip[] bgrMusic;
@@ -33,18 +33,35 @@ public class GameManager : MonoBehaviour
     public void TurnOnInstruction()
     {
         OnButtonCLick();
-        animator.Play("TurnOnInstruction");
+        animatorIns.Play("TurnOnInstruction");
         instruction.SetActive(true);
     }
     public void TurnOffInstruction()
     {
         OnButtonCLick();
-        animator.Play("TurnOffInstruction");
-        StartCoroutine(WaitAnimation());
+        animatorIns.Play("TurnOffInstruction");
+        StartCoroutine(WaitInsAnimation());
     }
-    IEnumerator WaitAnimation()
+    IEnumerator WaitInsAnimation()
     {
         yield return new WaitForSeconds(1f);
         instruction.SetActive(false);
+    }
+    public void TurnOnLeaderboard()
+    {
+        OnButtonCLick();
+        animatorLea.Play("TurnOnLeaderboard");
+        leaderboard.SetActive(true);
+    }
+    public void TurnOffLeaderboard()
+    {
+        OnButtonCLick();
+        animatorLea.Play("TurnOffLeaderboard");
+        StartCoroutine(WaitLeaAnimation());
+    }
+    IEnumerator WaitLeaAnimation()
+    {
+        yield return new WaitForSeconds(1f);
+        leaderboard.SetActive(false);
     }
 }

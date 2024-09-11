@@ -139,7 +139,7 @@ TextureImporter:
         width: 1342
         height: 509
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,6 +147,27 @@ TextureImporter:
       bones: []
       spriteID: 7e4dd73becd80294d99bd0fd37bb5d35
       internalID: -1703276273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014cute game buttons with cartoon_5320938_2"
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 1329
+        width: 1350
+        height: 510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12c38bf751e0074f8daf12c12d6964d
+      internalID: 1335186135
       vertices: []
       indices: 
       edges: []
@@ -164,6 +185,7 @@ TextureImporter:
     nameFileIdTable:
       "\u2014Pngtree\u2014cute game buttons with cartoon_5320938_0": -1121703857
       "\u2014Pngtree\u2014cute game buttons with cartoon_5320938_1": -1703276273
+      "\u2014Pngtree\u2014cute game buttons with cartoon_5320938_2": 1335186135
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

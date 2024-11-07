@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource music, boomSource, shootSource, dashSource, collisionSource;
-    public AudioClip startWarMusic, highPressureClip, boomClip, shootClip, dashClip, reviveClip, playerDeathClip, buttonClip, bulletImpactClip;
+    public AudioClip startWarMusic, highPressureClip, boomClip, shootClip, dashClip, reviveClip, playerDeathClip, buttonClip, bulletImpactClip, gameUIPopUpClip;
     public AudioClip[] enemyClip;
     public static AudioManager instance;
     int onchange = 0, ondeath = 0;
@@ -78,6 +78,7 @@ public class AudioManager : MonoBehaviour
     public void OnClickButton()
     {
         boomSource.clip = buttonClip;
+        boomSource.volume = 1f;
         boomSource.Play();
     }
     public void OnEnemyBite()
@@ -97,5 +98,12 @@ public class AudioManager : MonoBehaviour
         dashSource.clip = playerDeathClip;
         dashSource.volume = 1f;
         dashSource.Play();
+    }
+    public void OnGameUIPopUp()
+    {
+        boomSource.clip = gameUIPopUpClip;
+        boomSource.volume = 1f;
+        boomSource.time = 1f;
+        boomSource.Play();
     }
 }

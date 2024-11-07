@@ -8,6 +8,7 @@ public class Score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentScoreText;
     [SerializeField] private TextMeshProUGUI _highScoreText;
     public int _score = 0;
+    public bool highScore;
     private void Awake()
     {
         if (instance == null)
@@ -17,6 +18,7 @@ public class Score : MonoBehaviour
     }
     private void Start()
     {
+        highScore = false;
         _currentScoreText.text = "Score: " + _score.ToString();
         _highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
         UpdateHighScore();
@@ -27,6 +29,7 @@ public class Score : MonoBehaviour
     {
         if (_score > PlayerPrefs.GetInt("HighScore"))
         {
+            highScore = true;
             PlayerPrefs.SetInt("HighScore", _score);
             _highScoreText.text = "High Score: " + _score.ToString();
         }

@@ -9,7 +9,7 @@ public class GameTotal : MonoBehaviour
     int check = 0;
     public float playTime;
     [SerializeField] private TextMeshProUGUI totalText, timerText, enemyDeathText;
-    public GameObject GameOverUI, markPos;
+    public GameObject GameOverUI, markPos, highScoreTag;
     public Animator animator;
     public static GameTotal instance;
     public GameObject[] marks;
@@ -48,6 +48,12 @@ public class GameTotal : MonoBehaviour
         enemyDeathText.text = "enemy death: " + enemyDeath.ToString();
         GameOverUI.SetActive(true);
         animator.Play("UIGameOverPopUp");
+
+        AudioManager.instance.OnGameUIPopUp();
+        if(Score.instance.highScore)
+        {
+            highScoreTag.SetActive(true);
+        }
 
         float testId = (float)totalScore/90;
         Debug.Log(testId);
